@@ -1,5 +1,6 @@
 import React from 'react';
 import {Animated, FlatList, Text, TouchableOpacity, I18nManager} from "react-native";
+import Icon from "react-native-vector-icons/MaterialIcons/FontAwesome";
 
 const KeyboardView = ({ keyboardOnPress, keyboardViewStyle, keyboardViewTextStyle, pinLength, onComplete, bgColor, returnType, textColor, animatedDeleteButton, deleteText, animatedDeleteButtonOnPress, styles, onPress, buttonDeletePosition, buttonDeleteStyle }) => {
   let data = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -59,7 +60,7 @@ const KeyboardView = ({ keyboardOnPress, keyboardViewStyle, keyboardViewTextStyl
           <Text style={[styles[1], {
             color  : textColor,
             opacity: 1,
-          }, keyboardViewTextStyle]}>{item}</Text>
+          }, keyboardViewTextStyle]}>{item === deleteText ? <Icon name="delete" size={'{30}'} color="#000" /> : item}</Text>
         </Animated.View>
       </TouchableOpacity>
     )
